@@ -98,6 +98,38 @@ A simple payload will look like this:
 }
 ```
 
+Another example payload with cc and bcc: 
+
+```
+{
+  "personalizations": [{
+    "to": [
+      {
+      	"name": "Tetris",
+      	"email":"example@tetris.com"
+      }
+    ],	"cc":[
+      {
+      	"name": "Test",
+        "email": "test@test.com"
+      }
+    ],
+    "bcc":[
+      {"email": "bcc@email.com"}]
+  }],
+  "from": {
+	"email": "support@sitminder.com"  
+  },
+"subject": "Test Subject",
+"content":[
+  {
+    "type": "text/plain",
+    "value": "Email content in plain text"
+  }]
+
+}
+```
+
 ## 🚀 Deployment <a name = "deployment"></a>
 Once you setup the AWS credentials, please deploy via below command:
 
@@ -132,5 +164,6 @@ provide appropriate stage to deploy. For example to deploy in dev env, use dev
 
 ## Known Issues <a name="known_issues"></a>
 - Mailgun is still in sandbox; hence currently there are no emails going out that are not pre-registered. 
+- No authentication
 
 
