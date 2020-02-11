@@ -8,3 +8,4 @@ jspm_packages
 src/helpers/test.js
 .nyc_output
 challenge.pdf
+coverage
