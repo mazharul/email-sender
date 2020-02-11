@@ -1,0 +1,20 @@
+{
+    "personalizations": [{
+      "to": [
+        {
+          "name": "Doe",
+          "email": "doe@doe.com"
+        }
+      ]
+    }],
+    "from": {
+      "email": "sender@email.com"
+    },
+    "subject": "Test Subject",
+    "content": [
+      {
+        "type": "text/plain",
+        "value": "Your new email"
+      }]
+
+  }

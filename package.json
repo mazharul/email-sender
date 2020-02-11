@@ -1,0 +1,38 @@
+{
+  "name": "email-sender-service",
+  "version": "0.0.1",
+  "description": "Send email via different email providers",
+  "main": "handler.js",
+  "scripts": {
+    "test": "nyc --reporter=html --reporter=text sls invoke test --stage=dev",
+    "coverage": "nyc report --reporter lcov --reporter text"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mazharul/email-sender.git"
+  },
+  "author": "Maz <me@mazharulanwar.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mazharul/email-sender/issues"
+  },
+  "homepage": "https://github.com/mazharul/email-sender#readme",
+  "devDependencies": {
+    "aws-sdk-mock": "^5.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "nyc": "^15.0.0",
+    "serverless-mocha-plugin": "^1.11.0",
+    "sinon": "^8.1.1"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.614.0",
+    "axios": "^0.19.2",
+    "form-data": "^3.0.0",
+    "jsonschema": "^1.2.5"
+  }
+}
