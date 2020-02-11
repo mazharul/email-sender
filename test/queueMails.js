@@ -14,19 +14,19 @@ const wrapped = mochaPlugin.getWrapper('queueMails', '/src/queueMails/handler.js
 
 const fixtures = require('./fixtures/index')
 
-const setupEnvironment = require('./setups/environment')
+const setup = require('./setups/environment')
 
 const apiPayload = {
   body: JSON.stringify(fixtures.apiPayload)
 }
 describe('Queue Emails to SQS', () => {
   before((done) => {
-    setupEnvironment.mock()
+    setup.setupEnvironment()
     done()
   })
 
   after((done) => {
-    setupEnvironment.restore()
+    setup.restoreEnvironment()
     done()
   })
 

@@ -1,7 +1,5 @@
 const nock = require('nock')
 
-// nock.disableNetConnect()
-
 const mockSendGridSuccess = () => {
   nock('https://api.sendgrid.com/v3')
     .post('/mail/send')

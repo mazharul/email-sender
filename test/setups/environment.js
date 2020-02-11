@@ -17,6 +17,6 @@ const restoreEnvironment = () => {
 }
 
 module.exports = {
-  mock: setupEnvironment,
-  restore: restoreEnvironment
+  setupEnvironment,
+  restoreEnvironment
 }

@@ -16,22 +16,22 @@ const wrappedMailGun = mochaPlugin.getWrapper('sendEmail', '/src/delivery/mailgu
 const mockServices = require('./setups/external-service')
 
 const fixtures = require('./fixtures/index')
-const setupEnvironment = require('./setups/environment')
+const setup = require('./setups/environment')
 const queueUrl = 'https//your.queue.url'
 
 describe('Send Email related tests', () => {
   before((done) => {
-    setupEnvironment.mock()
+    setup.setupEnvironment()
     done()
   })
 
   after((done) => {
-    setupEnvironment.restore()
+    setup.restoreEnvironment()
     done()
   })
 
   beforeEach((done) => {
-    setupEnvironment.mock()
+    setup.setupEnvironment()
     // Mock the SQS.deleteMessage method
     AWS.mock('SQS', 'deleteMessage', (params, callback) => {
       callback(null, {
