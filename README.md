@@ -20,9 +20,15 @@
 - [Usage](#usage)
 - [Built Using](#built_using)
 - [Acknowledgments](#acknowledgement)
+- [TODOs](#todos)
+- [known Issues](#known_issues)
 
 ## 🧐 About <a name = "about"></a>
 All about sending emails. Exposes API to enable any other service/client to be able to send emails. In a usual setup both email service providers will be able to pick up requests and process. In the event of single service/email provider failure, the message will be returned to the queue for other email provider to process. 
+
+A slight variation to the solution implmented is: instead of being one service provider on standby and activates when  other is down, in current implmentation both the service providers are always active and ready to send emails ( mailgun needs to be out of sandbox to make it production ready ). Either one of the service failure doesn't impact the system because in the case of one provider failure the request will be visible and returned to the queue for other email provider to pick it up and send. 
+
+With DLQ ( Dead letter queue ), each failed request can be visible. Audit can be done via cloudwatch logs.   
 
 <img src='assets/diagram.png'>
 
@@ -116,10 +122,15 @@ provide appropriate stage to deploy. For example to deploy in dev env, use dev
 
 
 
-TODO: 
+## 📝 TODO <a name="todos"></a>: 
 
 - [ ] Reference the queue url automatically from cloudformation stack
 - [ ] DLQ need to be setup 
 - [ ] Add support for CC and BCC (mailgun)
 - [ ] Write more tests
 - [ ] Produce swagger/openapi document as API doc. 
+
+## Known Issues <a name="known_issues"></a>
+- Mailgun is still in sandbox; hence currently there are no emails going out that are not pre-registered. 
+
+
