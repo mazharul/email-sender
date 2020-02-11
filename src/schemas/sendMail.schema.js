@@ -43,7 +43,7 @@ const sendMail = {
       properties: {
         type: {
           type: 'string',
-          enum: ['plain/text']
+          enum: ['text/plain']
 
         },
         value: { type: 'string' }
