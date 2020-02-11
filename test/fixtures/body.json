@@ -1,22 +1,26 @@
 {
-    "personalizations": [{
-      "to": [
-        {
-          "name": "Doe",
-          "email": "doe@doe.com"
-        }
-      ]
-    }],
-    "from": {
-      "email": "sender@email.com"
-    },
-    "subject": "Test Subject",
-    "content": [
+  "personalizations": [{
+    "to": [
       {
-        "type": "text/plain",
-        "value": "Your new email"
-      }]
+      	"name": "Dear",
+      	"email":"dear@doe.com"
+      }
+    ],	"cc":[
+      {
+        "email": "test@test.com"
+      }
+    ],
+    "bcc":[
+      {"email": "totaltest@test.com"}]
+  }],
+  "from": {
+	"email": "support@siteminder.com"  
+  },
+"subject": "Test Subject",
+"content":[
+  {
+    "type": "text/plain",
+    "value": "Your new email"
+  }]
 
-  }
-
-
+}

@@ -21,7 +21,7 @@
 - [Built Using](#built_using)
 - [Acknowledgments](#acknowledgement)
 - [TODOs](#todos)
-- [known Issues](#known_issues)
+- [Known Issues](#known_issues)
 
 ## 🧐 About <a name = "about"></a>
 All about sending emails. Exposes API to enable any other service/client to be able to send emails. In a usual setup both email service providers will be able to pick up requests and process. In the event of single service/email provider failure, the message will be returned to the queue for other email provider to process. 
@@ -126,7 +126,7 @@ provide appropriate stage to deploy. For example to deploy in dev env, use dev
 
 - [ ] Reference the queue url automatically from cloudformation stack
 - [ ] DLQ need to be setup 
-- [ ] Add support for CC and BCC (mailgun)
+- [x] Add support for CC and BCC (mailgun)
 - [ ] Write more tests
 - [ ] Produce swagger/openapi document as API doc. 
 

@@ -30,12 +30,16 @@ class MailGun {
 
   async prepareBody (body) {
     const to = this.composeEmailAddresses(body, 'to')
+    const cc = this.composeEmailAddresses(body, 'cc')
+    const bcc = this.composeEmailAddresses(body, 'bcc')
     const text = this.getTextBody(body)
     const form = new FormData()
     form.append('from', body.from.email)
     form.append('to', to)
     form.append('subject', body.subject)
     form.append('text', text)
+    form.append('cc', cc)
+    form.append('bcc', bcc)
 
     return form
   }
@@ -52,19 +56,38 @@ class MailGun {
   }
 
   // TODO: fix the eslint for const issue; it should be let
-  composeEmailAddresses (body) {
+  // TODO: too many if-else; re-do the function
+  composeEmailAddresses (body, filter) {
     const t = []
     const processedEmails = []
     body.personalizations.map((obj, index, arr) => {
-      if (obj.to) {
-        obj.to.map((e) => {
-          t.push(e)
-        })
+      if (filter === 'to') {
+        if (obj.to) {
+          obj.to.map((e) => {
+            t.push(e)
+          })
+        }
+      }
+
+      if (filter === 'cc') {
+        if (obj.cc) {
+          obj.cc.map((e) => {
+            t.push(e)
+          })
+        }
+      }
+
+      if (filter === 'bcc') {
+        if (obj.bcc) {
+          obj.bcc.map((e) => {
+            t.push(e)
+          })
+        }
       }
     })
 
     t.map((obj) => {
-      const email = `${obj.name} <${obj.email}>`
+      const email = obj.name ? `${obj.name} <${obj.email}>` : `${obj.email}`
       processedEmails.push(email)
     })
 
