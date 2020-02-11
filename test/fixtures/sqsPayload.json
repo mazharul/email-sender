@@ -1,0 +1,14 @@
+{
+  "Records": [
+    {
+      "messageId": "2d23b84f-e4d6-4fff-99cd-50c59b9acf56",
+      "receiptHandle": "AQEBUnNfDOoNCcQIUZOi4CkGNgwGMjQK8JgkAFJ1T+y+20R6Ke+uNJCHFJWbU2epjMJnSjombjeFx++pIa9FO27VjDIUvol6gb81WpKf0Y/PPDa1BqXUxDQZBpBMzkYzQ3JRBob9S4E7QmQ6FgU85Wtb2bEZ0KqWV8Frt5TN/0K+WHiANBqdcEd182JaK0LSuPax8moi3MyrsZ/z2j40qmTCe9krJjDCykkZHCDxAiY5azlHFhp3/QbAC/QSvm7YfxZAx/MIG+xDgB5Y+CcsrapUUWCGPVcwbvCyXc/6RZz1IwhrCSA6KVWn5UjbcE2dvrXIemgGvyVEzGmj0vBYz+iDsll2E83ZnclXKM0fNmYORQ782t34j36Jh3CWLTXz1Aio6HzKQTqRTjpvS/ehI7tE0g==",
+      "body": "{\"personalizations\":[{\"to\":[{\"name\":\"Dear\",\"email\":\"test@gmail.com\"}],\"cc\":[{\"email\":\"test@test.com\"}],\"bcc\":[{\"email\":\"totaltest@test.com\"}]}],\"from\":{\"email\":\"support@siteminder.com\"},\"subject\":\"Test Subject\",\"content\":[{\"type\":\"text/plain\",\"value\":\"Your email content in plain text\"}]}",
+      "messageAttributes": {},
+      "md5OfBody": "954de0873cfd43bd17f7944c796dc3dc",
+      "eventSource": "aws:sqs",
+      "eventSourceARN": "arn:aws:sqs:ap-southeast-1:497508184662:EmailSender",
+      "awsRegion": "ap-southeast-1"
+    }
+  ]
+}

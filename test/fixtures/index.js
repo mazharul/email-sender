@@ -1,3 +1,4 @@
 module.exports = {
-  apiPayload: require('./body.json')
+  apiPayload: require('./body.json'),
+  sqsPayload: require('./sqsPayload.json')
 }

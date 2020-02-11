@@ -1,17 +1,17 @@
 'use strict'
 
-const Queue = require('../../helpers/queue')
-const Q = new Queue()
-const SendGrid = require('../../helpers/sendgrid')
-const service = new SendGrid()
-
 module.exports.sendEmail = async (event, context, callback) => {
+  // To mock using nock and aws-sdk-mock we need to initialise these files here
+  const SendGrid = require('../../helpers/sendgrid')
+  const service = new SendGrid()
+  const Queue = require('../../helpers/queue')
+  const Q = new Queue()
+
   const hasRecord = event && event.Records
   if (!hasRecord) {
     return callback(new Error('No record to process'))
   }
 
-  console.log(event)
   try {
     const record = event.Records[0]
     const handle = record.receiptHandle
