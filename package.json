@@ -31,7 +31,7 @@
     "sinon": "^8.1.1"
   },
   "dependencies": {
-    "aws-sdk": "^2.614.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^0.21.1",
     "form-data": "^3.0.0",
     "jsonschema": "^1.2.5"
